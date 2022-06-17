@@ -3,13 +3,14 @@ import {useNavigate} from 'react-router-dom';
 import '../styles/form.scss';
 
 const Signup = ({signup, error}) => {
+	const [email, setEmail] = useState('');
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const navigate = useNavigate();
 
 	const handleSubmit = async () => {
-		if(await signup({username, password, confirmPassword})) 
+		if(await signup({email, username, password, confirmPassword})) 
 			navigate('/');
 	};
 
@@ -24,6 +25,15 @@ const Signup = ({signup, error}) => {
 						type="text"
 						value={username}
 						onChange={({ target: { value } }) => setUsername(value)}
+					/>
+				</div>
+				<div className="input-field">
+					<label htmlFor='email'>Email</label>
+					<input
+						name='email'
+						type="email"
+						value={email}
+						onChange={({ target: { value } }) => setEmail(value)}
 					/>
 				</div>
 				<div className="input-field">

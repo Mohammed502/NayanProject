@@ -4,13 +4,19 @@ const {
 	comparePassword,
 	generateAccessToken,
 } = require("../utils/auth");
+const emailValidator = require('email-validator');
 
 const signup = async (req, res) => {
-	const { username, password, confirmPassword } = req.body;
-	if (!username || !password)
+	const { email, username, password, confirmPassword } = req.body;
+	if (!email || !username || !password)
 		return res.status(400).json({
 			success: false,
 			body: { message: "Credentials not provided" },
+		});
+	if(!emailValidator.validate(email)) 
+		return res.status(400).json({
+			succes: false,
+			body: { message: "Invalid email" },
 		});
 	if (username.length < 6)
 		return res.status(400).json({
@@ -27,14 +33,14 @@ const signup = async (req, res) => {
 			succes: false,
 			body: { message: "Passwords do not match" },
 		});
-	let user = await User.findOne({ username });
+	let user = await User.findOne({ email });
 	if (user)
 		return res.status(401).json({
-			success: false,
-			body: { message: "User already exists with the given username" },
+			succes: false,
+			body: { message: "User already exists with the given email" },
 		});
 	const hashedPassword = await hashPassword(password);
-	user = new User({ username, password: hashedPassword });
+	user = new User({ email, username, password: hashedPassword });
 	user = await user.save();
 
 	const accessToken = generateAccessToken(user);
@@ -47,20 +53,19 @@ const signup = async (req, res) => {
 };
 
 const login = async (req, res) => {
-	const { username, password } = req.body;
-	if (!username || !password)
+	const { email, password } = req.body;
+	if (!email || !password)
 		return res.status(400).json({
 			success: false,
 			body: { message: "Credentials not provided" },
 		});
 
-	const user = await User.findOne({ username });
+	const user = await User.findOne({ email });
 	if (!user)
 		return res.status(400).json({
 			success: false,
-			body: { message: "User does not exist" },
+			body: { message: "User does not exist with given email" },
 		});
-	console.log(user.username, user.password);
 	if (!(await comparePassword(password, user.password)))
 		return res
 			.status(403)

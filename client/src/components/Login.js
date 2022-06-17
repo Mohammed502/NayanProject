@@ -3,12 +3,12 @@ import {useNavigate} from 'react-router-dom';
 import '../styles/form.scss';
 
 const Login = ({login, error}) => {
-	const [username, setUsername] = useState("");
+	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
 
 	const handleSubmit = async () => {
-		if(await login({username, password})) 
+		if(await login({email, password})) 
 			navigate('/');
 	};
 
@@ -17,11 +17,11 @@ const Login = ({login, error}) => {
 			<form className="form">
 				<h2>LOGIN</h2>
 				<div className="input-field">
-					<label htmlFor='username'>Username</label>
+					<label htmlFor='email'>Email</label>
 					<input
-						type="text"
-						value={username}
-						onChange={({ target: { value } }) => setUsername(value)}
+						type="email"
+						value={email}
+						onChange={({ target: { value } }) => setEmail(value)}
 					/>
 				</div>
 				<div className="input-field">

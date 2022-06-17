@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema({
+	email: String,
 	username: String,
 	password: String,
 });
@@ -18,6 +19,7 @@ const orderSchema = new Schema({
 	quantity: Number,
 	deliveryAddress: String,
 	totalPrice: Number,
+	contactNumber: Number,
 });
 
 module.exports = {

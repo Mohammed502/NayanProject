@@ -8,7 +8,6 @@ const initialState = {
 };
 export const Contact = (props) => {
 	const [{ name, email, message }, setState] = useState(initialState);
-	console.log(props.payment);
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setState((prevState) => ({ ...prevState, [name]: value }));

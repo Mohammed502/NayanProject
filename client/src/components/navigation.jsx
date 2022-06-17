@@ -62,7 +62,7 @@ export const Navigation = ({user, isLoggedIn, logout}) => {
 									<Link to="/login">Login</Link>
 								</li>
 								<li>
-									<Link to="/products">Signup</Link>
+									<Link to="/signup">Signup</Link>
 								</li>
 							</>
 							:

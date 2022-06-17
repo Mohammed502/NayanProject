@@ -7,6 +7,7 @@ const URL = "http://localhost:10000";
 const Products = ({isLoggedIn}) => {
 	const [products, setProducts] = useState([]);
 	const [quantity, setQuantity] = useState('');
+	const [contactNumber, setContactNumber] = useState('');
 	const [deliveryAddress, setDeliveryAddress] = useState("");
 	const [error, setError] = useState("");
 	const navigate = useNavigate();
@@ -26,17 +27,15 @@ const Products = ({isLoggedIn}) => {
 	const placeOrder = async (_id) => {
 		if(!isLoggedIn) 
 			return navigate('/login');
-		const response = await fetch(`${URL}/product/placeOrder`, {
+		const response = await fetch(`${URL}/product/initiateOrder`, {
 			method: 'POST',
 			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify({quantity, deliveryAddress, productId: _id}),
+			body: JSON.stringify({quantity, deliveryAddress, contactNumber, productId: _id}),
 			credentials: 'include'
 		});
 		const data = await response.json();
-		if(data.success) {
-			alert('Order placed');
-			cancelOrder(_id);
-		}
+		if(data.success) 
+			window.location.replace(data.body.url);
 		else 
 			setError(data.body.message);
 	};
@@ -110,6 +109,14 @@ const Products = ({isLoggedIn}) => {
 									value={quantity}
 									onChange={({ target: { value } }) =>
 										setQuantity(value)
+									}	
+								/>
+								<input
+									type="number"
+									placeholder="Contact Number"
+									value={contactNumber}
+									onChange={({ target: { value } }) =>
+										setContactNumber(value)
 									}
 								/>
 								<textarea

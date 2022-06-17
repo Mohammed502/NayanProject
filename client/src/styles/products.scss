@@ -33,7 +33,8 @@
 			}
 			.order-modal {
 				width: 350px;
-				height: 400px;
+				min-height: 400px;
+				max-height: auto;
 				position: absolute;
 				top: calc(50% - 200px);
 				left: calc(50% - 175px);

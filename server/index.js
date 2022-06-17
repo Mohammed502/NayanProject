@@ -1,12 +1,12 @@
+require("dotenv").config();
 const express = require('express');
-const mongoose=require('mongoose')
+const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 const authRouter = require('./app/routers/authRouter');
 const productRouter = require('./app/routers/productRouter');
 
-require("dotenv").config();
 /* central server setup */
 
 const app = express()

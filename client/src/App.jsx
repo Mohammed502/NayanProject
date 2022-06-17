@@ -10,6 +10,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Products from "./components/Products";
+import ConfirmOrder from "./components/ConfirmOrder";
 import JsonData from "./data/data.json";
 import { Contact } from "./components/contact";
 
@@ -21,15 +22,15 @@ const App = () => {
 	const [user, setUser] = useState({});
 	const [error, setError] = useState("");
 
-	const login = async ({ username, password }) => {
-		if (!username || !password) {
+	const login = async ({ email, password }) => {
+		if (!email || !password) {
 			setError("Fill all the fields");
 			return false;
 		}
 		const response = await fetch(`${URL}/auth/login`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ username, password }),
+			body: JSON.stringify({ email, password }),
 			credentials: "include",
 		});
 		const data = await response.json();
@@ -41,15 +42,15 @@ const App = () => {
 		return false;
 	};
 
-	const signup = async ({ username, password, confirmPassword }) => {
-		if (!username || !password || !confirmPassword) {
+	const signup = async ({ email, username, password, confirmPassword }) => {
+		if (!email || !username || !password || !confirmPassword) {
 			setError("Fill all the fields");
 			return false;
 		}
 		const response = await fetch(`${URL}/auth/signup`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ username, password, confirmPassword }),
+			body: JSON.stringify({ email, username, password, confirmPassword }),
 			credentials: "include",
 		});
 		const data = await response.json();
@@ -62,7 +63,6 @@ const App = () => {
 	};
 
 	const logout = async () => {
-		console.log(1);
 		const response = await fetch(`${URL}/auth/logout`, {
 			method: "DELETE",
 			credentials: "include",
@@ -125,7 +125,11 @@ const App = () => {
 							)
 						}
 					/>
-					<Route path="/products" element={<Products isLoggedIn={isLoggedIn}/>} />
+					<Route path="/confirmOrder" element={<ConfirmOrder />} />
+					<Route
+						path="/products"
+						element={<Products isLoggedIn={isLoggedIn} />}
+					/>
 				</Routes>
 				<Contact data={landingPageData.Contact} />
 			</Router>

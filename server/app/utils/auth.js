@@ -23,8 +23,9 @@ const generateAccessToken = (user) => {
 	return jwt.sign(
 		{
 			_id: user._id,
+			email: user.email,
 			username: user.username,
-			password: user.password,
+			password: user.password
 		},
 		ACCESS_TOKEN_SECRET
 	);
