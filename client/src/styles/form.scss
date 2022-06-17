@@ -1,0 +1,54 @@
+@import 'templates';
+
+.form-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 3rem auto;
+	height: 80vh;
+	.form {
+		width: 300px;
+		max-width: 95%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		h2 {
+			color: #1A1B1C;
+		}
+		.input-field {
+			display: flex;
+			flex-direction: column;
+			align-self: stretch;
+			color: #1A1B1C;
+			input {
+				width: 100%;
+				height: 35px;
+				border: 0px;
+				border-bottom: 2px solid #1A1B1C;
+				background: transparent;
+				color: #1A1B1C;
+				transition: 0.5s border-color;
+				&:focus {
+					border-color: rgb(95, 145, 253);
+				}
+			}
+		}
+		.submit-button {
+			input {
+				@include button;
+			}
+		}
+		.form-link {
+			transition: 0.3s transform;
+			a {
+				color: green;
+				font-size: 0.9rem;
+				text-decoration: none;
+			}
+			&:hover {
+				transform: scale(1.03);
+			}
+		}
+	}
+}

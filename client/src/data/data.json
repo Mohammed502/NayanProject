@@ -1,0 +1,117 @@
+{
+  "Header": {
+    "title": "Sand | Cement | Bricks",
+    "paragraph": "Kamal Lime Depot is the leading wholesaler of cement. We are reliable partner for your construction"
+  },
+  "About": {
+    "paragraph": "Kamal Lime Depot is 24 X 7 Working and you can order from anywhere in Mumbai and the order will be delivered as soon as possible . ",
+    "Why": [
+      "24 X 7 working",
+      "Best Quality Assurance",
+      "Fastest Delivery",
+      "Sample are provided"
+    ],
+    "Why2": [
+      "All types of payment mode are accepted",
+      "Contact through call and email is supported"
+    ]
+  },
+  "Gallery": [
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/01-large.jpg",
+      "smallImage": "img/portfolio/01-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/02-large.jpg",
+      "smallImage": "img/portfolio/02-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/03-large.jpg",
+      "smallImage": "img/portfolio/03-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/04-large.jpg",
+      "smallImage": "img/portfolio/04-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/05-large.jpg",
+      "smallImage": "img/portfolio/05-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/06-large.jpg",
+      "smallImage": "img/portfolio/06-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/07-large.jpg",
+      "smallImage": "img/portfolio/07-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/08-large.jpg",
+      "smallImage": "img/portfolio/08-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/09-large.jpg",
+      "smallImage": "img/portfolio/09-small.jpg"
+    }
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-caret-up",
+      "name": "Sand",
+      "text": "Best quality of sand is provided with effective price."
+    },
+    {
+      "icon": "fa fa-cart-arrow-down",
+      "name": "Cement",
+      "text": "We supply cement to contractors and its official distributors."
+    },
+    {
+      "icon": "fa fa-truck",
+      "name": "Transport services",
+      "text": "We provide delivery in all over Mumbai  with nominal cost."
+    }
+  ],
+  
+  "Contact": {
+    "address": "61 Tulsi Building Senapati Bapat Marg Lower Parel West Mumbai : 400013",
+    "phone": "+91 90825 37398",
+    "email": "Kamalimedepot@gmail.com",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  },
+  "payment":{
+    "url":"img/payment.jpg"
+  },
+  "Features": [
+    {
+      "icon": "fa fa-inr",
+      "title": "Best Price",
+      "text": "You will get the best wholesaler price for sand , cement and lime."
+    },
+    {
+      "icon": "fa fa-check",
+      "title": "Best Quality",
+      "text": "Best quality is on first priority for our customers."
+    },
+    {
+      "icon": "fa fa-heart",
+      "title": "Trustworthy",
+      "text": "As we are providing our best quality for our customers since 2017."
+    },
+    {
+      "icon": "fa fa-gift",
+      "title": "Surprise Hamper",
+      "text": "Surprise Hamper for top sales customers."
+    }
+  ]
+}

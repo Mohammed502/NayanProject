@@ -1,0 +1,18 @@
+@mixin button {
+	background: rgb(95, 145, 253);
+	border: 2px solid transparent;
+	color: whitesmoke;
+	font-size: 1rem;
+	height: 35px;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s all;
+	border-radius: 0px;
+	&:hover {
+		color: rgb(95, 145, 253);
+		background: transparent;
+		border-color: rgb(95, 145, 253);
+	}
+}
